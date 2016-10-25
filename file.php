@@ -9,7 +9,7 @@
 				margin-top: 50px;
 			}
 		</style> 
-		<title><Биссектриса треугольника</title>
+		<title>Биссектриса треугольника</title>
 	</head>
 	<body>
 		
