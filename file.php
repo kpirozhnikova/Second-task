@@ -9,16 +9,16 @@
 				margin-top: 50px;
 			}
 		</style> 
-		<title>Р‘РёСЃСЃРµРєС‚СЂРёСЃР° С‚СЂРµСѓРіРѕР»СЊРЅРёРєР°</title>
+		<title>Биссектриса треугольника</title>
 	</head>
 	<body>
 		
 		<form method="GET">
 			<p align="center"><img src='http://planetcalc.ru/users/2/1271080992.JPG' ></p>
 			<p align="center"><img src='http://planetcalc.ru/cgi-bin/mimetex.cgi?L=\frac{\sqrt{ab(a+b+c)(a+b-c)}}{a+b}' ></p>
-	        <p align="center" class="text"> 
-	        РљР°Р»СЊРєСѓР»СЏС‚РѕСЂ РґР»РёРЅС‹ Р±РёСЃСЃРµРєС‚СЂРёСЃС‹ С‚СЂРµСѓРіРѕР»СЊРЅРёРєР°. РЎРј. СЂРёСЃСѓРЅРѕРє РІС‹С€Рµ. Р’РµСЂС€РёРЅС‹ С‚СЂРµСѓРіРѕР»СЊРЅРёРєР° РѕР±С‹С‡РЅРѕ РѕР±РѕР·РЅР°С‡Р°СЋС‚ Р·Р°РіР»Р°РІРЅС‹РјРё Р±СѓРєРІР°РјРё A, B, C, Р° СЃС‚СЂРѕС‡РЅС‹РјРё Р±СѓРєРІР°РјРё a, b, c - РґР»РёРЅС‹ РїСЂРѕС‚РёРІРѕРїРѕР»РѕР¶РЅС‹С… СЃС‚РѕСЂРѕРЅ. Рў.Рµ. СЃС‚РѕСЂРѕРЅР° AB - c, AC - b, BC - a. </p>
-			<p align="center">РЎС‚РѕСЂРѕРЅР° a
+	                <p align="center" class="text"> 
+	                Калькулятор длины биссектрисы треугольника. См. рисунок выше. Вершины треугольника обычно обозначают заглавными буквами A, B, C, а строчными буквами a, b, c - длины противоположных сторон. Т.е. сторона AB - c, AC - b, BC - a. </p>
+			<p align="center">Сторона a
 			<input type="text" name="a" value= "<?php 
 				if (isset($_GET['a'])){
 					echo htmlspecialchars($_GET['a']);
@@ -26,7 +26,7 @@
 			?>">
 			</p>
 			
-			<p align="center">РЎС‚РѕСЂРѕРЅР° b
+			<p align="center">Сторона b
 			<input type="text" name="b" value= "<?php 
 				if (isset($_GET['b'])){
 					echo htmlspecialchars($_GET['b']);
@@ -34,14 +34,14 @@
 			?>">
 			</p>
 
-			<p align="center">РЎС‚РѕСЂРѕРЅР° c
+			<p align="center">Сторона c
 			<input type="text" name="c" value= "<?php 
 				if (isset($_GET['c'])){
 					echo htmlspecialchars($_GET['c']);
 				} 
 			?>">
 			</p>
-			<div class="button" align="center"><input type="submit" value="Р Р°СЃСЃС‡РёС‚Р°С‚СЊ"></div>
+			<div class="button" align="center"><input type="submit" value="Рассчитать"></div>
 		</form>
 
 		<div class="calc" align="center">
@@ -51,11 +51,11 @@
 			}
 			if (isset($_GET['a']) && isset($_GET['b']) && isset($_GET['c'])) {
 				if (!is_numeric($_GET['a']) || !is_numeric($_GET['b']) || !is_numeric($_GET['c'])) {
-					echo "РќРµ РІСЃРµ РїРѕР»СЏ Р·Р°РїРѕР»РЅРµРЅС‹ РёР»Рё РІРІРµРґРµРЅС‹ РЅРµС‡РёСЃР»РѕРІС‹Рµ Р·РЅР°С‡РµРЅРёСЏ";
+					echo "Не все поля заполнены или введены нечисловые значения";
 				} elseif ($_GET['a']<0 || $_GET['b']<0 || $_GET['c']<0) {
-					echo "Р—РЅР°С‡РµРЅРёРµ РЅРµ РјРѕР¶РµС‚ Р±С‹С‚СЊ РѕС‚СЂРёС†Р°С‚РµР»СЊРЅС‹Рј";
+					echo "Значение не может быть отрицательным";
 				} else {
-					echo ('Р РµР·СѓР»СЊС‚Р°С‚: '.number_format((calculation($_GET['a'], $_GET['b'], $_GET['c'])), 2, ',', ' '));
+					echo ('Результат: '.number_format((calculation($_GET['a'], $_GET['b'], $_GET['c'])), 2, ',', ' '));
 				}
 			}
 		?>
